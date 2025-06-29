@@ -45,6 +45,7 @@ extension Int: ExampleProtocol {
 print("7.simpleDescription:", 7.simpleDescription)
 
 // 특정 프로토콜을 따르는 값이라는 뜻으로 다음과 같이 타입을 표시한다.
-let protocolValue: any ExampleProtocol = a
+// let protocolValue: any ExampleProtocol = a // 일반적인 프로토콜 타입
+let protocolValue: some ExampleProtocol = a  // 컴파일 타임에 고정됨. 컴파일러가 보장. 최적화에 유리.
 
 print("protocolValue.simpleDescription:", protocolValue.simpleDescription)
